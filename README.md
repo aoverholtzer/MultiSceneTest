@@ -6,23 +6,23 @@ To test, simply build and run the app on macOS Catalina or iPadOS 13. Click the 
 
 ### Bugs I've Found:
 
-1. **App crashes when secondary window is closed.**
-   (Catalyst, FB6933235, FB6940492)
- If you've tried closing a window in Beta 5, you've seen this error:
+1. **App crashes when secondary window is closed.** (Catalyst, FB6933235, FB6940492)
+   
+   If you've tried closing a window in Beta 5, you've seen this error:
    ```objective-c
    *** Terminating app due to uncaught exception 'NSRangeException', reason: 'Cannot remove an observer <UINSSceneViewController 0x60000350eaa0> for the key path "view.window.screen.contentLayoutRect" from <UINSSceneViewController 0x60000350eaa0> because it is not registered as an observer.'
    ```
    
-2. **Activating an existing session (window) does not work.**
-   (Catalyst, FB6528385)
+2. **Activating an existing session (window) does not work.** (Catalyst, FB6528385)
+   
    Calling  `requestSceneSessionActivation:userActivity:options:errorHandler:` with an existing session should bring its window to the front. This works on iOS but not in Catalyst.
 
-3. **Windows (scenes) on MacOS do not restore state on re-launch.**
-   (Catalyst, FB6528562)
+3. **Windows (scenes) on MacOS do not restore state on re-launch.** (Catalyst, FB6528562)
+   
    By providing a valid NSUserActivity in the method `SceneDelegate stateRestorationActivityForScene:` when the app is quit, we enable secondary windows to be restored when the app is relaunched. This works as expected on iOS: on relaunch, our `stateRestorationActivity` is passed in to `scene:willConnectToSession:options:` so we can restore the session. On macOS, this fails in one of two ways: Either no secondary windows are created at all, or they are created but no `stateRestorationActivity` is passed in.
 
-4. **UIApplication.openSessions contains closed windows.**
-   (Catalyst, iPadOS, FB6943824)
+4. **UIApplication.openSessions contains closed windows.** (Catalyst & iPadOS, FB6943824)
+   
    Try this on either iPad or macOS:
    
    1. Run the app and open a bunch of windows.

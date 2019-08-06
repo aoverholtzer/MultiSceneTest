@@ -15,7 +15,7 @@ To test, simply build and run the app on macOS Catalina or iPadOS 13. Click the 
    
 2. **Activating an existing session (window) does not work.** (Catalyst, FB6528385)
    
-   Calling  `requestSceneSessionActivation:userActivity:options:errorHandler:` with an existing session should bring its window to the front. This works on iOS but not in Catalyst.
+   Calling  `requestSceneSessionActivation:userActivity:options:errorHandler:` with an existing session should bring its window to the front. This works on iOS but not in Catalyst, meaning the "Activate Existing Scene" button works on iPad but fails (it creates a new window) on macOS.
 
 3. **Windows (scenes) on MacOS do not restore state on re-launch.** (Catalyst, FB6528562)
    

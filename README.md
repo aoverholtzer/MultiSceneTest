@@ -37,5 +37,5 @@ To test, simply build and run the app on macOS Catalina or iPadOS 13. Click the 
    
    > An archived session does not have a connected scene, but a snapshot of its UI does appear in the app switcher.
    
-   These sessions from our last run are _not_ in the iPad app switcher, so this appears to be either a bug or a documentation error. That said, restoring state in an existing session and creating a new session may be functionally equivalent in a real app. This test app's "restore some random scene" button is not behavior I'd expect to see in real a real app.
+   These sessions from our last run are _not_ in the iPad app switcher, so this appears to be either a bug or a documentation error. That said, restoring state in an existing session and creating a new session may be functionally equivalent in a real app. This test app's "restore some random scene" button is not behavior I'd expect to see in a real app.
 

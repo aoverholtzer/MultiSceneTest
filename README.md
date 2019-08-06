@@ -13,7 +13,7 @@ To test, simply build and run the app on macOS Catalina or iPadOS 13. Click the 
    *** Terminating app due to uncaught exception 'NSRangeException', reason: 'Cannot remove an observer <UINSSceneViewController 0x60000350eaa0> for the key path "view.window.screen.contentLayoutRect" from <UINSSceneViewController 0x60000350eaa0> because it is not registered as an observer.'
    ```
    
-2. **Activating an existing session (window) does not work.** (Catalyst, FB6528385)
+2. **Activating an existing session (window) does not work.** (Catalyst, FB6528385 — closed as dupe)
    
    Calling `requestSceneSessionActivation:userActivity:options:errorHandler:` with an existing session should bring its window to the front. This works on iOS but not in Catalyst, meaning the "Activate Existing Scene" button works on iPad but fails on macOS (it creates a new window).
 
